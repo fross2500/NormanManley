@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace NormanManley.Data
 {
-    public class Gender
+    public class Genders
     {
         [Key]
 
         public int Id { get; set; }
-        public string Boy { get; set; }
-        public string Girl { get; set; }
+        
+        public string StudentGender { get; set; }
     }
 }

@@ -34,23 +34,29 @@ namespace NormanManley
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IPaymentRespository,paymenttyperepository>();
-            services.AddScoped<IGradesRespository, gradestyperepository>();
-            services.AddScoped<IStudentRepository, studenttyperepository>();
-            services.AddScoped<IGendersRepository, genderstyperespository>();
+            services.AddScoped<IGradesRespository, Gradestyperepository>();
+            services.AddScoped<IStudentRepository, Studenttyperepository>();
+            services.AddScoped<IGendersRepository, Genderstyperespository>();
             services.AddScoped<IDisabilitiesRepository, disabilitiestyperepository>();
-            services.AddScoped<IParentRepository, parenttyperepository>();
+            
 
-            services.AddAutoMapper(typeof(Maps))
+            services.AddAutoMapper(typeof(Maps));
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IWebHostEnvironment env,
+            UserManager<IdentityUser>userManager,
+            RoleManager<IdentityRole>roleManager
+            )
         {
             if (env.IsDevelopment())
             {
@@ -71,6 +77,7 @@ namespace NormanManley
             app.UseAuthentication();
             app.UseAuthorization();
 
+            SeedData.Seed(userManager, roleManager);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

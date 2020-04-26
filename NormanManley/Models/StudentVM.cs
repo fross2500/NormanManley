@@ -1,46 +1,70 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using NormanManley.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace NormanManley.Models
 {
-    public class DetailStudentVM
+    public class StudentVM
     {
+        [Key]
         public int Id { get; set; }
+
         [Required]
-        public string FirstName { get; set; }
+
+        [Display(Name = "Student First  Name")]
+
+        public string StudentFirstName { get; set; }
+
         [Required]
-        public string LastName { get; set; }
+
+        [Display(Name = "Student Last  Name")]
+
+        public string StudentLastName { get; set; }
+
         [Required]
-        public DateTime DateOfBirth { get; set; }
+        [Display(Name = "Date of Birth")]
+        public DateTime? DateOfBirth { get; set; }
+
         [Required]
-        public string Disability { get; set; }
-        
+        public string Disabilities { get; set; }
+
+        [Required]
+        public string Grade { get; set; }
+
         [Required]
         public string Gender { get; set; }
-        public string Grade { get; set; }
-        public IEnumerable<SelectListItem> Disabilities { get; set; }
-        public IEnumerable<SelectListItem> Genders { get; set; }
-        public IEnumerable<SelectListItem> Grades { get; set; }
+    
+
+        [Required]
+
+        [Display(Name = "Parent First Name")]
+        public string ParentFirstName { get; set; }
+        [Required]
+
+        [Display(Name = "Parent Last  Name")]
+
+        public string ParentLastName { get; set; }
+        
+
+
+        [Display(Name = "Gaurdian First  Name")]
+
+        public string GuardianFirstName { get; set; }
+
+
+        [Display(Name = "Gaurdian Last  Name")]
+
+       
+        public string GuardianLastName { get; set; }
+        
+
     }
 }
+    
 
-public class CreateStudentVM
-{
-    [Required]
-    public string FirstName { get; set; }
-    [Required]
-    public string LastName { get; set; }
-    [Required]
-    public DateTime DateOfBirth { get; set; }
-    [Required]
-    public string Disability { get; set; }
-    [Required]
-    public string Gender { get; set; }
-    [Required]
-    public string Grade { get; set; }
 
-}

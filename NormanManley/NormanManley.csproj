@@ -5,6 +5,25 @@
     <UserSecretsId>aspnet-NormanManley-7E2D829D-DFFF-4EFF-834C-04096277CA6E</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20200421202531_data.cs" />
+    <Compile Remove="Migrations\20200421202531_data.Designer.cs" />
+    <Compile Remove="Migrations\20200422024826_AddStudentTable.cs" />
+    <Compile Remove="Migrations\20200422024826_AddStudentTable.Designer.cs" />
+    <Compile Remove="Migrations\20200423232826_AddedTableDetails.cs" />
+    <Compile Remove="Migrations\20200423232826_AddedTableDetails.Designer.cs" />
+    <Compile Remove="Migrations\20200425005451_AddedTableDetails.cs" />
+    <Compile Remove="Migrations\20200425005451_AddedTableDetails.Designer.cs" />
+    <Compile Remove="Migrations\20200425010031_AddedTableDetails.cs" />
+    <Compile Remove="Migrations\20200425010031_AddedTableDetails.Designer.cs" />
+    <Compile Remove="Migrations\20200425010240_AddedTableDetails.cs" />
+    <Compile Remove="Migrations\20200425010240_AddedTableDetails.Designer.cs" />
+    <Compile Remove="Migrations\20200425010525_AddedTableDetails.cs" />
+    <Compile Remove="Migrations\20200425010525_AddedTableDetails.Designer.cs" />
+    <Compile Remove="Migrations\20200425194938_AddedTableDetails.cs" />
+    <Compile Remove="Migrations\20200425194938_AddedTableDetails.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
@@ -12,8 +31,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

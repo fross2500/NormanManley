@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace NormanManley.Repository
 {
-    public class studenttyperepository : IStudentRepository
+    public class Studenttyperepository : IStudentRepository
     {
         private readonly ApplicationDbContext _db;
 
-        public studenttyperepository(ApplicationDbContext db)
+        public Studenttyperepository(ApplicationDbContext db)
         {
             _db = db;
         }
 
 
-        public bool Create(Student entity)
+        public bool Create(Students entity)
         {
             _db.Students.Add(entity);
             return Save();
@@ -25,33 +25,35 @@ namespace NormanManley.Repository
 
         }
 
-        public bool Delete(Student entity)
+        public bool Delete(Students entity)
         {
             _db.Students.Remove(entity);
             return Save();
 
         }
 
-        public ICollection<Student> FindAll()
+        
+        public ICollection<Students> Findall()
         {
             return _db.Students.ToList();
         }
 
-        public ICollection<Student> Findall()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Student FindById(int id)
+        public Students FindById(int id)
         {
             return _db.Students.Find(id);
         }
 
-        public ICollection<Student> GetStudentByGrades(int id)
+        public ICollection<Students> GetStudentByGrades(int id)
    
        
         {
             throw new NotImplementedException();
+        }
+
+        public bool IsExists(int id)
+        {
+            var exists = _db.Students.Any(q => q.Id ==id);
+            return exists;
         }
 
         public bool Save()
@@ -60,7 +62,7 @@ namespace NormanManley.Repository
             return changes > 0;
         }
 
-        public bool Update(Student entity)
+        public bool Update(Students entity)
 
 
         {

@@ -52,6 +52,12 @@ namespace NormanManley.Repository
             throw new NotImplementedException();
         }
 
+        public bool IsExists(int id)
+        {
+            var exists = _db.Students.Any(q => q.Id == id);
+            return exists;
+        }
+
         public bool Save()
         {
             var changes = _db.SaveChanges();

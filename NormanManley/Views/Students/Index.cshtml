@@ -1,0 +1,112 @@
+﻿@model IEnumerable<NormanManley.Models.StudentVM>
+
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Student Form</h1>
+<hr />
+
+<p>
+    <a asp-action="Create" class="btn btn-success"> <i class="fa fa-plus-circle" aria-hidden="true"></i>Create New</a>
+</p>
+<table id="tblData" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disabilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GuardianFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GuardianLastName)
+            </th>
+            <th> Action </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(ModelItem => item.StudentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.StudentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.DateOfBirth)
+            </td>
+            <th>
+                @Html.DisplayNameFor(ModelItem => item.Disabilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(ModelItem => item.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(ModelItem => item.Gender)
+            </th>
+            <td>
+                @Html.DisplayFor(ModelItem => item.ParentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.ParentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.GuardianFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.GuardianLastName)
+            </td>
+
+            @if (SignInManager.IsSignedIn(User))
+            {
+                if (User.IsInRole("Administrator"))
+                {
+
+                    <td>
+                        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"> <i class="fa fa-pencil-square" aria-hidden="true"></i> </a>
+                        <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Id"> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id" onclick="return confirm ('Are you sure you want to delete this record?')"> <i class="fa fa-trash" aria-hidden="true"></i> </a>
+                    </td>
+                }
+
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+
+    <script>
+
+    </script>
+
+}

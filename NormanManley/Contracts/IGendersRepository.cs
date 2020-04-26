@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace NormanManley.Contracts
 {
-    public interface IGendersRepository:IRepositoryBase<Grade>
+    public interface IGendersRepository:IRepositoryBase<Genders>
     {
-        ICollection<Grade> GetStudentByGenders(int id);
+        ICollection<Genders>StudentByGenders(int id);
     }
 }

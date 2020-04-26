@@ -1,0 +1,82 @@
+﻿@model NormanManley.Models.StudentVM
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentFirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentFirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentLastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Disabilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Disabilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParentFirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParentFirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParentLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParentLastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GuardianFirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GuardianFirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GuardianLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GuardianLastName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

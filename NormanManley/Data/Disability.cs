@@ -9,11 +9,8 @@ namespace NormanManley.Data
     public class Disabilities
     {
         [Key]
-        public string Blind { get; set; }
-        public string Dumb { get; set; }
-        public string VisuallyImpaired { get; set; }
-        public string PhysicallyDisabled { get; set; }
-        public string HearingImpaired { get; set; }
-
+        public int Id { get; set; }
+        public string StudentDisability { get; set; }
+        
     }
 }

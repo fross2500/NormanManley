@@ -11,9 +11,8 @@ namespace NormanManley.Mappings
     {
         public Maps()
         {
-            CreateMap<Student, DetailStudentVM>().ReverseMap();
-            CreateMap<Student, CreateStudentVM>().ReverseMap();
-            CreateMap<Payment, PaymentVM>().ReverseMap();
+            CreateMap<Students, StudentVM>().ReverseMap();
+           
             CreateMap<Parent, ParentVM>().ReverseMap();
 
 

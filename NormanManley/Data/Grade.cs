@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace NormanManley.Data
 {
-    public class Grade
+    public class Grades
     {
         [Key]
-
-        public string Class1 { get; set; }
-        public string Class2 { get; set; }
-        public string Class3 { get; set; }
-        public string Class4 { get; set; }
+        public int Id { get; set; }
+        
+        public string StudentClass { get; set; }
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace NormanManley.Mappings
+﻿using System;
+
+namespace NormanManley.Mappings
 {
-    internal class DetailStudentVM
+  internal class StudentVM
     {
     }
 }
+
